@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalisa Bass | Data Engineer & Analytics Developer</title>
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0d1b2a 100%);
+            min-height: 100vh;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #9b59b6;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #9b59b6;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            color: #ffffff;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 120px 40px 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #1a0a2e 0%, #0a0a0a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(155, 89, 182, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #bdc3c7;
+        }
+
+        /* ===== CANVA EMBED SECTION ===== */
+        .canva-embed {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .canva-embed iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(155, 89, 182, 0.3);
+        }
+
+        /* ===== PROJECT BUTTONS (P1, P2, P3) ===== */
+        .project-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            border: 3px solid #9b59b6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(155, 89, 182, 0.4);
+        }
+
+        .project-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.6);
+            background: linear-gradient(135deg, #8e44ad, #7d3c98);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            background: rgba(10, 10, 10, 0.8);
+            padding: 80px 40px;
+            margin: 60px 0;
+            border-left: 5px solid #9b59b6;
+            border-radius: 10px;
+        }
+
+        .about h2 {
+            color: #9b59b6;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .about p {
+            color: #bdc3c7;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .about strong {
+            color: #ffffff;
+        }
+
+        /* ===== SKILLS SECTION ===== */
+        .skills {
+            padding: 60px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skills h2 {
+            color: #9b59b6;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            border: 2px solid #9b59b6;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            background: rgba(10, 10, 10, 0.9);
+            padding: 80px 40px;
+            text-align: center;
+            border-top: 2px solid #9b59b6;
+        }
+
+        .contact h2 {
+            color: #9b59b6;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #9b59b6;
+        }
+
+        .fiverr-btn {
+            background: linear-gradient(90deg, #1db954, #1ed760);
+            color: #ffffff;
+        }
+
+        .fiverr-btn:hover {
+            background: linear-gradient(90deg, #1ed760, #17c963);
+            transform: translateY(-3px);
+        }
+
+        .linkedin-btn {
+            background: linear-gradient(90deg, #0077b5, #00a0dc);
+            color: #ffffff;
+        }
+
+        .linkedin-btn:hover {
+            background: linear-gradient(90deg, #00a0dc, #0089d1);
+            transform: translateY(-3px);
+        }
+
+        /* ===== PROJECT PAGES ===== */
+        .project-page {
+            padding: 120px 40px 80px;
+            min-height: 100vh;
+        }
+
+        .project-page h1 {
+            color: #9b59b6;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .project-page h2 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .project-page p {
+            color: #bdc3c7;
+            margin-bottom: 20px;
+            max-width: 900px;
+        }
+
+        .tech-stack {
+            background: rgba(155, 89, 182, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #9b59b6;
+            margin: 30px 0;
+        }
+
+        .tech-stack h3 {
+            color: #9b59b6;
+            margin-bottom: 15px;
+        }
+
+        .tech-stack ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-stack li {
+            background: #9b59b6;
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 40px;
+            text-align: center;
+            border-top: 2px solid #9b59b6;
+            color: #bdc3c7;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            .project-buttons {
+                gap: 20px;
+            }
+
+            .project-btn {
+                width: 80px;
+                height: 80px;
+                font-size: 1.5rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Jalisa Bass</h1>
+        <p><strong>Data Engineer & Analytics Developer</strong></p>
+        <p>I am a Bachelor of Applied Science professional who masters transforming messy and disparate datasets into clean, automated pipelines, and interactive dashboards that deliver actionable business insights. My ultimate goal is to offer services and products that help my clients benefit from metadata their skills produce.</p>
+        
+        <!-- CANVA EMBED -->
+        <div class="canva-embed">
+            <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+                <iframe 
+                    src="https://www.canva.com/design/DAHQLQpwU48/MYpxetH05u161u-aUQbnqg/view?embed" 
+                    allowfullscreen="allowfullscreen" 
+                    allow="fullscreen">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- PROJECT BUTTONS (P1, P2, P3) -->
+        <div class="project-buttons">
+            <a href="project1.html" class="project-btn">P1</a>
+            <a href="project2.html" class="project-btn">P2</a>
+            <a href="project3.html" class="project-btn">P3</a>
+        </div>
+
+        <p>For examples of my work, please choose from P1, P2, and P3.</p>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <h2>About Jalisa</h2>
+        <p>I help build a special tool that takes all their messy information, cleans it up as it flows through, and comes out the other end a clear, colorful picture of each of their milestones.</p>
+        <p><strong>Bachelor of Applied Science in Data Management & Analysis</strong></p>
+        <p>Data Analytics | Business Services & Consulting | Design Agency</p>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">Shiny</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">ggplot2</span>
+            <span class="skill-tag">dplyr</span>
+            <span class="skill-tag">tidyr</span>
+            <span class="skill-tag">lubridate</span>
+            <span class="skill-tag">readr</span>
+            <span class="skill-tag">wordcloud2</span>
+            <span class="skill-tag">Google Trends</span>
+            <span class="skill-tag">Posit Connect Cloud</span>
+            <span class="skill-tag">Git/GitHub</span>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-links">
+            <a href="https://www.fiverr.com/users/katt_jay/portfolio" target="_blank" rel="noopener" class="contact-btn fiverr-btn">
+                View Fiverr Portfolio
+            </a>
+            <a href="https://www.linkedin.com/in/agentjane/" target="_blank" rel="noopener" class="contact-btn linkedin-btn">
+                LinkedIn Profile
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Jalisa Bass | Data Engineer & Analytics Developer</p>
+        <p>Transforming data into actionable business insights</p>
+    </footer>
+
+</body>
+</html>
