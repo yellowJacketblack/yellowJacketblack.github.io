@@ -11,6 +11,7 @@
             color: #ffffff;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0d1b2a 100%);
             min-height: 100vh;
+            line-height: 1.8;
         }
         nav {
             background: rgba(10, 10, 10, 0.95);
@@ -35,6 +36,220 @@
             border: 2px solid #9b59b6;
             border-radius: 25px;
             transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+        }
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+        }
+        .about-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .about-header h1 {
+            font-size: 3rem;
+            color: #9b59b6;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .about-header p {
+            color: #bdc3c7;
+            font-size: 1.1rem;
+        }
+        .section {
+            margin-bottom: 60px;
+        }
+        .section h2 {
+            color: #9b59b6;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+            padding-bottom: 10px;
+        }
+        .section p {
+            color: #bdc3c7;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .section strong {
+            color: #ffffff;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .skill-card {
+            background: rgba(155, 89, 182, 0.1);
+            border: 1px solid rgba(155, 89, 182, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .skill-card h3 {
+            color: #9b59b6;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .skill-card p {
+            color: #bdc3c7;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        .project-card {
+            background: rgba(10, 10, 10, 0.6);
+            border-left: 4px solid #9b59b6;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .project-card h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .project-card p {
+            color: #bdc3c7;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffff;
+            border: 2px solid #9b59b6;
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(155, 89, 182, 0.4);
+        }
+        .back-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #9b59b6;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .about-container { padding: 120px 20px 60px; }
+            .about-header h1 { font-size: 2.2rem; }
+            .section h2 { font-size: 1.4rem; }
+            nav ul { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-container">
+        <div class="about-header">
+            <h1>About Jalisa</h1>
+            <p>Data Engineer & Analytics Developer | Seattle, WA</p>
+        </div>
+
+        <div class="section">
+            <h2>Who I Am</h2>
+            <p>I'm Jalisa Bass, a Data Engineer and Analytics Developer originally from Houston, Texas, now based in Seattle, Washington. I specialize in building automated data pipelines and interactive dashboards that automate the flow of information from collection to action.</p>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <p>I hold a <strong>Bachelor of Applied Science in Data Management & Analysis</strong> from Bellevue College, conferred June 2026, with a concentration in Data Analytics. My coursework spanned data acquisition and management, statistical analysis, predictive analytics, multivariate analysis, marketing and analytics, data visualization, and data pipeline engineering. My academic foundation combines technical rigor with practical application to study and build systems.</p>
+        </div>
+
+        <div class="section">
+            <h2>Career Journey</h2>
+            <p>Before my journey through Bellevue College, my career always scratched the surface of systems. I built foundational skills in account management, process improvement, and logistics data systems through roles at <strong>AT&T</strong>, <strong>Cricket</strong>, <strong>Home Depot</strong>, and <strong>Planet Shippers</strong>. However, <strong>WorkMarket/ADP</strong> offered me the position as a remote technician, traveling and troubleshooting technical systems, that ignited my devotion to study beyond the jack of all trades.</p>
+        </div>
+
+        <div class="section">
+            <h2>KBCS Radio — Data Analyst</h2>
+            <p>I served as a Data Analyst at <strong>KBCS</strong>, Bellevue College's Radio Station. I enjoyed growing personally, academically, and professionally at KBCS, starting as a content producer in January 2023. Accidentally, or maybe not, I found myself in the KBCS Operations & Traffic Manager's (Greg Delia) office asking to assist with tasks like content metadata in WordPress. I appreciate Greg's patience and time because he introduced me to the power of correctly identifying and labeling your content.</p>
+            <p>Not long after, I found myself working with Greg and the radio station engineers on projects to update our broadcasting software, monitoring and managing the KBCS.fm website & app metadata as the Operations & Traffic Manager's Assistant. After working beside Greg for less than a year, I encouraged him and the KBCS team it was time to open doors for my classmates to work in the station due to the overwhelming amount of work and commitment the team endures 7 days a week. After 2 years, Greg agreed I could intern as the Data Analyst for KBCS once I was accepted into the Bellevue College's BAS Data Management & Analysis Program.</p>
+            <p>My first big project was engineering a <strong>Python-based data pipeline</strong> that extracted, categorized, and analyzed thousands of website backlinks to improve our domain's ranking by <strong>80%</strong>. This was only possible because Greg explained SEM optimization to me the first time I walked in his office. I will always appreciate his investment.</p>
+            <p>My next project was developing and deploying an interactive <strong>R Shiny dashboard</strong> with multifactorial integration to visualize audience engagement and demographics insights. However, I also learned about <strong>NIST</strong>, the National Institute of Standards and Technology. Before graduating, I made it my mission to draft, manage, and implement proper data documentation. I documented every component in the R Shiny app, PostgreSQL database, IP log files, survey CSVs, Geo Chart data, credentials, and API keys. I then classified the data sensitivity from PII, moderate risk, and low risk. I made sure to create an authentication access process and role-based access control. Unfortunately, I was not far enough in my education to know how to incorporate multifactor authentication and session management with JavaScript.</p>
+            <p>However, I did get the attention of my Program Chair, KBCS Development Director, KBCS Music Director, and Greg, who all encouraged me to continue building after using a summer to study NIST. That summer was the best, because I learned the reach of JavaScript, why consumer metadata is power, and how to harness that power while protecting our KBCS listeners. That summer I was also introduced to some of our listeners who were gaming streamers on Kick, Twitch, and YouTube. They gave me really cool ideas on how to use my interest for new challenges to practice my craft in content distribution, pipelines, and data analytics.</p>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming & Languages</h3>
+                    <p>Python (data engineering, scripting, ETL pipelines), SQL (advanced optimization, complex joins on large datasets), R (Shiny dashboard development, statistical modeling, predictive forecasting)</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud & Data Platforms</h3>
+                    <p>Snowflake (data ingestion, SQL-based transformations, view creation)</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Data Engineering & Orchestration</h3>
+                    <p>Apache Airflow (workflow automation), dbt (data transformation, testing, YAML-based validation), ETL/ELT pipeline design</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Data Validation & Quality</h3>
+                    <p>dbt Tests, Great Expectations, custom data quality frameworks</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Visualization & BI</h3>
+                    <p>R Shiny interactive dashboard development, KPI design, geospatial data integration</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Marketing Analytics</h3>
+                    <p>CRM analytics, campaign measurement, attribution concepts, lifecycle analysis</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Platforms</h3>
+                    <p>PostgreSQL, Ansible, Docker, Git, WordPress, Microsoft 365/Excel</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Personal Projects</h2>
+            <div class="project-card">
+                <h3>Twitch Analytics Dashboard (GIRL)</h3>
+                <p>I architected a production-grade business intelligence platform on a virtual machine using PostgreSQL 18, Ansible automation, and Apache Airflow orchestration. I designed the database schema for stream snapshots, clips, and revenue events, built automation scripts for environment provisioning, and continue maintaining the platform's data pipelines and analytics.</p>
+            </div>
+            <div class="project-card">
+                <h3>Predictive Sales Forecasting</h3>
+                <p>I developed an R-based analytical model that analyzes historical sales data, identifies trends, and forecasts future product demand.</p>
+            </div>
+        </div>
+
+        <div class="back-container">
+            <a href="index.html" class="back-btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jalisa Bass | Data Engineer & Analytics Developer</p>
+    </footer>
+</body>
+</html>            transition: all 0.3s ease;
         }
         nav a:hover {
             background: linear-gradient(90deg, #9b59b6, #8e44ad);
