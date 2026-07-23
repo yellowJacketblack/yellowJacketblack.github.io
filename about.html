@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Jalisa Bass</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0d1b2a 100%);
+            min-height: 100vh;
+        }
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #9b59b6;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #9b59b6;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+        }
+        .placeholder {
+            padding: 150px 40px 80px;
+            text-align: center;
+        }
+        .placeholder h1 {
+            color: #9b59b6;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .placeholder p {
+            color: #bdc3c7;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffff;
+            border: 2px solid #9b59b6;
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="placeholder">
+        <h1>About</h1>
+        <p>Content coming soon.</p>
+        <a href="index.html" class="back-btn">Back to Home</a>
+    </section>
+</body>
+</html>
