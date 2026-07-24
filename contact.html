@@ -5,42 +5,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1 Package | Jalisa Bass</title>
     <style>
-        /* PASTE YOUR ENTIRE <style> BLOCK FROM index.html HERE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0d1b2a 100%);
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #9b59b6;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #9b59b6;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+        }
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .contact-header h1 {
+            font-size: 3rem;
+            color: #9b59b6;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .contact-header p {
+            color: #bdc3c7;
+            font-size: 1.1rem;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #9b59b6;
+        }
+        .fiverr-btn {
+            background: linear-gradient(90deg, #1db954, #1ed760);
+            color: #ffffff;
+        }
+        .fiverr-btn:hover {
+            background: linear-gradient(90deg, #1ed760, #17c963);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(30, 215, 96, 0.4);
+        }
+        .linkedin-btn {
+            background: linear-gradient(90deg, #0077b5, #00a0dc);
+            color: #ffffff;
+        }
+        .linkedin-btn:hover {
+            background: linear-gradient(90deg, #00a0dc, #0089d1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 160, 220, 0.4);
+        }
+        .form-section {
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(155, 89, 182, 0.3);
+            border-radius: 15px;
+            padding: 40px;
+        }
+        .form-section h2 {
+            color: #9b59b6;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+            padding-bottom: 15px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            color: #9b59b6;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(155, 89, 182, 0.3);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #9b59b6;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 10px rgba(155, 89, 182, 0.3);
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            border: 2px solid #9b59b6;
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Arial', sans-serif;
+        }
+        .submit-btn:hover {
+            background: linear-gradient(90deg, #8e44ad, #7d3c98);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(155, 89, 182, 0.4);
+        }
+        .back-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 12px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffff;
+            border: 2px solid #9b59b6;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            transform: translateY(-3px);
+        }
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #9b59b6;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .contact-container { padding: 120px 20px 60px; }
+            .contact-header h1 { font-size: 2.2rem; }
+            .contact-links { flex-direction: column; align-items: center; }
+            .form-section { padding: 25px; }
+            nav ul { gap: 15px; }
+        }
     </style>
 </head>
 <body>
-
-    <!-- NAVIGATION -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- PROJECT PAGE CONTENT -->
-    <section class="project-page">
-        <h1>Package 1</h1>
-        <h2>Project Title Here</h2>
-        <p>Description of your first package/project.</p>
-        
-        <div class="tech-stack">
-            <h3>Tech Stack</h3>
-            <ul>
-                <li>R</li>
-                <li>Shiny</li>
-                <li>PostgreSQL</li>
-            </ul>
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Get In Touch</h1>
+            <p>Ready to transform your data? Send me a message or connect with me on my professional profiles.</p>
         </div>
-        
-        <!-- Link to live dashboard -->
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="YOUR_POSIT_LINK_HERE" target="_blank" class="contact-btn linkedin-btn">
-                View Live Dashboard
+
+        <div class="contact-links">
+            <a href="https://www.fiverr.com/users/katt_jay/portfolio" target="_blank" rel="noopener" class="contact-btn fiverr-btn">
+                View Fiverr Portfolio
+            </a>
+            <a href="https://www.linkedin.com/in/agentjane/" target="_blank" rel="noopener" class="contact-btn linkedin-btn">
+                LinkedIn Profile
             </a>
         </div>
-    </section>
+
+        <div class="form-section">
+            <h2>Send Me a Message</h2>
+            <form action="https://formspree.io/f/mqeryqqq" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" id="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" name="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" id="subject" required placeholder="What is this about?">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" required placeholder="Type your message here..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <div class="back-container">
+            <a href="index.html" class="back-btn">Back to Home</a>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer>
