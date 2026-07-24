@@ -5,47 +5,277 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1 Package | Jalisa Bass</title>
     <style>
-        /* PASTE YOUR ENTIRE <style> BLOCK FROM index.html HERE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0d1b2a 100%);
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #9b59b6;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #9b59b6;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+        }
+        .project-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .project-header h1 {
+            font-size: 3rem;
+            color: #9b59b6;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .project-header p {
+            color: #bdc3c7;
+            font-size: 1.2rem;
+        }
+        .project-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            color: #ffffff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        .section h2 {
+            color: #9b59b6;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+            padding-bottom: 10px;
+        }
+        .section p {
+            color: #bdc3c7;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .section strong {
+            color: #ffffff;
+        }
+        .section ul {
+            color: #bdc3c7;
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        .section li {
+            margin-bottom: 10px;
+        }
+        .tech-stack {
+            background: rgba(155, 89, 182, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #9b59b6;
+            margin: 30px 0;
+        }
+        .tech-stack h3 {
+            color: #9b59b6;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        .tech-stack ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-left: 0;
+        }
+        .tech-stack li {
+            background: #9b59b6;
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        .dashboard-preview {
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(155, 89, 182, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .dashboard-preview h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .dashboard-preview p {
+            color: #bdc3c7;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        .live-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #ffffff;
+            border: 2px solid #9b59b6;
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            transition: all 0.3s ease;
+        }
+        .live-btn:hover {
+            background: linear-gradient(90deg, #8e44ad, #7d3c98);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(155, 89, 182, 0.4);
+        }
+        .back-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 12px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffff;
+            border: 2px solid #9b59b6;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            transform: translateY(-3px);
+        }
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #9b59b6;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .project-container { padding: 120px 20px 60px; }
+            .project-header h1 { font-size: 2.2rem; }
+            .section h2 { font-size: 1.4rem; }
+            nav ul { gap: 15px; }
+        }
     </style>
 </head>
 <body>
-
-    <!-- NAVIGATION -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- PROJECT PAGE CONTENT -->
-    <section class="project-page">
-        <h1>Package 1</h1>
-        <h2>Project Title Here</h2>
-        <p>Description of your first package/project.</p>
-        
+    <div class="project-container">
+        <div class="project-header">
+            <span class="project-badge">Package 1</span>
+            <h1>Game Search Trends Analytics Dashboard</h1>
+            <p>Interactive R Shiny dashboard analyzing gaming search trends</p>
+        </div>
+
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p>This interactive dashboard analyzes <strong>Google Trends data</strong> for popular gaming search terms, providing real-time insights into search interest patterns, regional distribution, and emerging query trends. Built as a production-grade analytics tool, it helps content creators and gaming industry professionals identify trending topics and optimize their content strategy.</p>
+            <p>The dashboard covers the search terms: <strong>hunt</strong>, <strong>new world</strong>, <strong>ark</strong>, <strong>smash</strong>, and <strong>rust</strong>, analyzing data from <strong>April 20, 2026 to July 20, 2026</strong> across the <strong>United States</strong>.</p>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Search Term Selection:</strong> Interactive dropdown to analyze individual game terms</li>
+                <li><strong>Key Metrics:</strong> Total data points, average search interest, and peak search interest</li>
+                <li><strong>Search Interest Over Time:</strong> Daily search interest visualization with relative scoring (0-100)</li>
+                <li><strong>All Terms Comparison:</strong> Side-by-side trend comparison across all 5 game terms</li>
+                <li><strong>Regional Interest Distribution:</strong> State-by-state search interest breakdown</li>
+                <li><strong>Related Queries Analysis:</strong> Top queries and rising queries identification</li>
+                <li><strong>Most Frequent Related Queries:</strong> Word cloud visualization for selected terms</li>
+                <li><strong>Basic Statistics:</strong> Statistical summary of search interest data</li>
+                <li><strong>Regional Interest Comparison:</strong> Multi-term regional analysis</li>
+                <li><strong>Growth Strategy Tips:</strong> Actionable insights based on rising query trends</li>
+            </ul>
+        </div>
+
         <div class="tech-stack">
             <h3>Tech Stack</h3>
             <ul>
                 <li>R</li>
-                <li>Shiny</li>
-                <li>PostgreSQL</li>
+                <li>R Shiny</li>
+                <li>ggplot2</li>
+                <li>wordcloud2</li>
+                <li>dplyr</li>
+                <li>tidyr</li>
+                <li>lubridate</li>
+                <li>readr</li>
+                <li>Google Trends CSV</li>
+                <li>Posit Connect Cloud</li>
+                <li>Git/GitHub</li>
             </ul>
         </div>
-        
-        <!-- Link to live dashboard -->
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="YOUR_POSIT_LINK_HERE" target="_blank" class="contact-btn linkedin-btn">
-                View Live Dashboard
+
+        <div class="dashboard-preview">
+            <h3>Live Dashboard</h3>
+            <p>Click below to interact with the live dashboard deployed on Posit Connect Cloud</p>
+            <a href="https://019f8278-8e41-f72d-12f7-9f7d0dcaf9a7.share.connect.posit.cloud/" target="_blank" rel="noopener" class="live-btn">
+                View Live Dashboard →
             </a>
         </div>
-    </section>
 
-    <!-- FOOTER -->
+        <div class="section">
+            <h2>Use Case</h2>
+            <p>This dashboard is ideal for:</p>
+            <ul>
+                <li><strong>Gaming content creators</strong> identifying trending topics for videos and streams</li>
+                <li><strong>Game developers</strong> tracking competitor search interest</li>
+                <li><strong>Marketing teams</strong> optimizing campaign timing based on search trends</li>
+                <li><strong>Data analysts</strong> demonstrating interactive visualization capabilities</li>
+            </ul>
+        </div>
+
+        <div class="back-container">
+            <a href="index.html" class="back-btn">Back to Home</a>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Jalisa Bass | Data Engineer & Analytics Developer</p>
     </footer>
-
 </body>
 </html>
