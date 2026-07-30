@@ -3,49 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P1 Package | Jalisa Bass</title>
+    <title>P2 Package | Jalisa Bass</title>
     <style>
-        /* PASTE YOUR ENTIRE <style> BLOCK FROM index.html HERE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0d1b2a 100%);
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #9b59b6;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #9b59b6;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+        }
+        .project-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .project-header h1 {
+            font-size: 3rem;
+            color: #9b59b6;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .project-header p {
+            color: #bdc3c7;
+            font-size: 1.2rem;
+        }
+        .project-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            color: #ffffff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        .section h2 {
+            color: #9b59b6;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+            padding-bottom: 10px;
+        }
+        .section p {
+            color: #bdc3c7;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .section strong {
+            color: #ffffff;
+        }
+        .section ul {
+            color: #bdc3c7;
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        .section li {
+            margin-bottom: 10px;
+        }
+        .tech-stack {
+            background: rgba(155, 89, 182, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #9b59b6;
+            margin: 30px 0;
+        }
+        .tech-stack h3 {
+            color: #9b59b6;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        .tech-stack ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-left: 0;
+        }
+        .tech-stack li {
+            background: #9b59b6;
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        .role-card {
+            background: rgba(10, 10, 10, 0.6);
+            border-left: 4px solid #9b59b6;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .role-card h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .role-card p {
+            color: #bdc3c7;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        .dashboard-preview {
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(155, 89, 182, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .dashboard-preview h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .dashboard-preview p {
+            color: #bdc3c7;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        .live-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #ffffff;
+            border: 2px solid #9b59b6;
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            transition: all 0.3s ease;
+        }
+        .live-btn:hover {
+            background: linear-gradient(90deg, #8e44ad, #7d3c98);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(155, 89, 182, 0.4);
+        }
+        .back-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 12px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffff;
+            border: 2px solid #9b59b6;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+            transform: translateY(-3px);
+        }
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #9b59b6;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .project-container { padding: 120px 20px 60px; }
+            .project-header h1 { font-size: 2.2rem; }
+            .section h2 { font-size: 1.4rem; }
+            nav ul { gap: 15px; }
+        }
     </style>
 </head>
 <body>
-
-    <!-- NAVIGATION -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- PROJECT PAGE CONTENT -->
-    <section class="project-page">
-        <h1>Package 1</h1>
-        <h2>Project Title Here</h2>
-        <p>Description of your first package/project.</p>
-        
+    <div class="project-container">
+        <div class="project-header">
+            <span class="project-badge">Package 2</span>
+            <h1>GIRL, the Butler</h1>
+            <p>Multi-role authenticated analytics dashboard with role-based access control</p>
+        </div>
+
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p><strong>GIRL, the Butler</strong> is a secure, multi-role business intelligence dashboard designed to serve different user types with tailored access levels. The application features authentication via <strong>LINE Login</strong> or email, ensuring that sensitive data and functionality are protected while providing a personalized experience for each user role.</p>
+            <p>The dashboard implements <strong>role-based access control (RBAC)</strong>, routing authenticated users to role-specific interfaces that display only the data and tools relevant to their permissions. This architecture demonstrates enterprise-level security patterns while maintaining a clean, user-friendly experience.</p>
+        </div>
+
+        <div class="section">
+            <h2>User Roles & Access Levels</h2>
+            <div class="role-card">
+                <h3>Seller</h3>
+                <p>Report sales and view sales reports. Sellers can input transaction data and access their individual sales performance metrics.</p>
+            </div>
+            <div class="role-card">
+                <h3>Administrator</h3>
+                <p>Manage prompts and view the full dashboard. Administrators have complete access to system configuration, prompt management, and all analytics across the platform.</p>
+            </div>
+            <div class="role-card">
+                <h3>Viewer</h3>
+                <p>View dashboard reports. Viewers have read-only access to reports and visualizations, ideal for stakeholders who need insights without editing capabilities.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Dual Authentication:</strong> Login via LINE OAuth 2.0 or traditional email authentication</li>
+                <li><strong>Role-Based Access Control:</strong> Three distinct user roles with tailored permissions and interfaces</li>
+                <li><strong>Role-Specific Routing:</strong> Users are automatically directed to their appropriate dashboard view after authentication</li>
+                <li><strong>Sales Reporting:</strong> Sellers can submit and track sales data</li>
+                <li><strong>Prompt Management:</strong> Administrators can manage system prompts and configurations</li>
+                <li><strong>Read-Only Dashboard Access:</strong> Viewers access reports without modification rights</li>
+                <li><strong>Secure Session Management:</strong> Authentication state maintained throughout user session</li>
+            </ul>
+        </div>
+
         <div class="tech-stack">
             <h3>Tech Stack</h3>
             <ul>
                 <li>R</li>
-                <li>Shiny</li>
+                <li>R Shiny</li>
+                <li>LINE Login API (OAuth 2.0)</li>
+                <li>JavaScript</li>
                 <li>PostgreSQL</li>
+                <li>Session Management</li>
+                <li>Role-Based Access Control</li>
+                <li>GitHub Pages</li>
             </ul>
         </div>
-        
-        <!-- Link to live dashboard -->
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="YOUR_POSIT_LINK_HERE" target="_blank" class="contact-btn linkedin-btn">
-                View Live Dashboard
+
+        <div class="dashboard-preview">
+            <h3>Live Dashboard</h3>
+            <p>Click below to access the GIRL, the Butler dashboard. Authentication required to view role-specific content.</p>
+            <a href="https://yellowjacketblack.github.io/Package-2-dashboard/" target="_blank" rel="noopener" class="live-btn">
+                View Live Dashboard →
             </a>
         </div>
-    </section>
 
-    <!-- FOOTER -->
+        <div class="section">
+            <h2>Use Case</h2>
+            <p>This dashboard architecture is ideal for:</p>
+            <ul>
+                <li><strong>Multi-tenant SaaS applications</strong> requiring different access levels for different user types</li>
+                <li><strong>Sales teams</strong> needing individual reporting capabilities with administrative oversight</li>
+                <li><strong>Organizations</strong> requiring secure, role-based data access with LINE integration</li>
+                <li><strong>Client dashboards</strong> where stakeholders need view-only access to reports</li>
+            </ul>
+        </div>
+
+        <div class="back-container">
+            <a href="index.html" class="back-btn">Back to Home</a>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Jalisa Bass | Data Engineer & Analytics Developer</p>
     </footer>
-
 </body>
 </html>
